@@ -29,10 +29,10 @@ var bigSum = require('big-sum/legacy');
 
 MIT
 
-[NPMIMGURL]:                https://img.shields.io/npm/v/big-sum.svg?style=flat
-[BuildStatusIMGURL]:        https://img.shields.io/travis/coderaiser/big-sum/master.svg?style=flat
-[DependencyStatusIMGURL]:   https://img.shields.io/david/coderaiser/big-sum.svg?style=flat
-[LicenseIMGURL]:            https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
+[NPMIMGURL]:                https://img.shields.io/npm/v/big-sum.svg?style=flat&longCache=true
+[BuildStatusIMGURL]:        https://img.shields.io/travis/coderaiser/big-sum/master.svg?style=flat&longCache=true
+[DependencyStatusIMGURL]:   https://img.shields.io/david/coderaiser/big-sum.svg?style=flat&longCache=true
+[LicenseIMGURL]:            https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat&longCache=true
 [NPMURL]:                   https://npmjs.org/package/big-sum "npm"
 [BuildStatusURL]:           https://travis-ci.org/coderaiser/big-sum  "Build Status"
 [DependencyStatusURL]:      https://david-dm.org/coderaiser/big-sum "Dependency Status"

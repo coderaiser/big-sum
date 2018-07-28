@@ -106,3 +106,21 @@ test('sum: different digits count: more and less: no BigInt', (t) => {
     global.BigInt = BigInt;
 });
 
+test('sum: do not change args', (t) => {
+    const {BigInt} = global;
+    global.BigInt = undefined;
+    
+    const sum = mockRequire.reRequire('..');
+    
+    const a = [1, 2];
+    const b = [1];
+    
+    sum(a, b);
+    const expect = [1, 2];
+    
+    t.deepEqual(a, expect, 'should equal');
+    t.end();
+    
+    global.BigInt = BigInt;
+});
+

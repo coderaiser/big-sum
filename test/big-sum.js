@@ -3,6 +3,7 @@
 const test = require('tape');
 const mockRequire = require('mock-require');
 const sum = require('..');
+const {rawSum} = sum;
 
 test('sum: 1 char', (t) => {
     const result = sum([1], [2]);
@@ -58,11 +59,11 @@ test('sum: 10 chars: no BigInt', (t) => {
     
     const sum = mockRequire.reRequire('..');
     
-    const a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    const b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const b = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     
     const result = sum(a, b);
-    const expect = [2, 4, 6, 9, 1, 3, 5, 7, 10, 0];
+    const expect = [2, 4, 6, 9, 1, 3, 5, 7, 8];
     
     t.deepEqual(result, expect, 'should equal');
     t.end();
@@ -114,13 +115,40 @@ test('sum: do not change args', (t) => {
     
     const a = [1, 2];
     const b = [1];
+    const expect = [1, 2];
     
     sum(a, b);
-    const expect = [1, 2];
     
     t.deepEqual(a, expect, 'should equal');
     t.end();
     
     global.BigInt = BigInt;
+});
+
+test('sum: rawSum: no overflow', (t) => {
+    const a = [1, 2];
+    const b = [1];
+    const expect = [1, 3];
+    
+    const result = rawSum(a, b);
+    
+    t.deepEqual(result, expect, 'should equal');
+    t.end();
+});
+
+test('sum: rawSum: no overflow', (t) => {
+    const a = [1, 9];
+    const b = [1, 9];
+    const expect = [2, 18];
+    
+    const result = rawSum(a, b);
+    
+    t.deepEqual(result, expect, 'should equal');
+    t.end();
+});
+
+test('sum: rawSum: no args', (t) => {
+    t.throws(rawSum, /a should be an array!/, 'should throw');
+    t.end();
 });
 

@@ -37,7 +37,7 @@ var bigSum = require('big-sum/legacy');
 
 ## Related
 
-- [big-wrap](https://github.com/coderaiser/big-sum "Big Sum") - wrap array representation of big numbers
+- [big-wrap](https://github.com/coderaiser/big-wrap "Big Wrap") - wrap array representation of big numbers
 - [big-mul](https://github.com/coderaiser/big-mul "Big Mul") - multiply array representation of big numbers
 
 ## License

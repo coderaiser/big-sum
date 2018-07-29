@@ -1,3 +1,9 @@
+2018.07.29, v1.1.0
+
+feature:
+- (big-sum) add rawSum
+
+
 2018.07.28, v1.0.1
 
 fix:

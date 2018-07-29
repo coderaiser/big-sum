@@ -1,6 +1,6 @@
 {
   "name": "big-sum",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "sum array represented of big numbers",
   "main": "lib/big-sum.js",
   "scripts": {
